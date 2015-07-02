@@ -15,3 +15,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+
+  $("#test1").click(function() {
+    $("p").show();
+
+  });
+
+
+
+});

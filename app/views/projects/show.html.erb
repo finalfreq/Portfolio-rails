@@ -1,5 +1,6 @@
+<%= content_for(:title, "#{@project.name} | Freqy") %>
 
-
+<h1 class="page-header text-center"><%= @project.name%> </h1>
 
 
 <div class="link-group">
@@ -8,3 +9,11 @@
                                         data: {confirm: "Remove Project?",
                                                 method: 'delete'} %>
 </div>
+
+<h1 class="page-center">Project Information</h1>
+<p class="lead">
+  <%= @project.description %>
+</p>
+<p class="lead text-success">
+  Project on GitHub: <a href="http://<%= @project.link %>"> <%= @project.name %></a>
+</p>
