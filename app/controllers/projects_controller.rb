@@ -1,19 +1,23 @@
 class CategoriesController < ApplicationController
     def index
-      @categories = Category.all
+      @category = Category.find(params[:category_id])
+      @projects = @category.projects
     end
 
     def new
-      @category = Category.new
+      @category = Category.find(params[:category_id])
+      @project = @category.projects.new
     end
 
     def edit
-      @category = Category.find(params[:id])
+      @category = Category.find(params[:category_id])
+      @project = Project.find(params[:id])
     end
 
     def update
-      @category = Category.find(params[:id])
-      if @category.update(category_params)
+      @category = Category.find(params[:category_id])
+      @project = Project.find(params[:id])
+      if @category.update(post_params)
         flash[:notice] = "Category Successfully Updated"
         redirect_to category_path(@category)
       else
@@ -23,9 +27,9 @@ class CategoriesController < ApplicationController
     end
 
     def create
-      @category = Category.new(category_params)
+      @category = Category.find(params[:category_id])
+      @project = @category.projects.new(project_params)
       if @category.save
-        Admin.first.categories.push(@category)
         flash[:notice] = "Category Successfully Added"
         redirect_to category_path(@category)
       else
@@ -45,7 +49,7 @@ class CategoriesController < ApplicationController
     end
 
 private
-  def category_params
-    params.require(:category).permit(:name, :description)
+  def project_params
+    params.require(:category).permit(:name, :description, :link)
   end
 end
