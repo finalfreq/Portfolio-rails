@@ -29,9 +29,9 @@ class ProjectsController < ApplicationController
     def create
       @category = Category.find(params[:category_id])
       @project = @category.projects.new(project_params)
-      if @category.save
+      if @project.save
         flash[:notice] = "Project Successfully Added"
-        redirect_to category_project_path(@category, @project)
+        redirect_to category_projects_path(@category)
       else
         flash[:alert] = "Project was unable to be added."
         render :new
@@ -51,6 +51,6 @@ class ProjectsController < ApplicationController
 
 private
   def project_params
-    params.require(:category).permit(:name, :description, :link)
+    params.require(:project).permit(:name, :description, :link)
   end
 end
