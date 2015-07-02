@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class ProjectsController < ApplicationController
     def index
       @category = Category.find(params[:category_id])
       @projects = @category.projects
@@ -17,11 +17,11 @@ class CategoriesController < ApplicationController
     def update
       @category = Category.find(params[:category_id])
       @project = Project.find(params[:id])
-      if @category.update(post_params)
-        flash[:notice] = "Category Successfully Updated"
-        redirect_to category_path(@category)
+      if @project.update(project_params)
+        flash[:notice] = "Project Successfully Updated"
+        redirect_to category_project_path(@category, @project)
       else
-        flash[:alert] = "Category was unable to be added."
+        flash[:alert] = "Project was unable to be updated."
         render :edit
       end
     end
@@ -30,22 +30,23 @@ class CategoriesController < ApplicationController
       @category = Category.find(params[:category_id])
       @project = @category.projects.new(project_params)
       if @category.save
-        flash[:notice] = "Category Successfully Added"
-        redirect_to category_path(@category)
+        flash[:notice] = "Project Successfully Added"
+        redirect_to category_project_path(@category, @project)
       else
-        flash[:alert] = "Category was unable to be added."
+        flash[:alert] = "Project was unable to be added."
         render :new
       end
     end
 
     def show
-      @category = Category.find(params[:id])
+      @category = Category.find(params[:category_id])
+      @project = Project.find(params[:id])
     end
 
     def destroy
-      @category = Category.find(params[:id])
-      @category.destroy
-      redirect_to categories_path
+      @project = Project.find(params[:id])
+      @project.destroy
+      redirect_to category_path(@project.category)
     end
 
 private

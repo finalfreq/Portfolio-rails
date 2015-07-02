@@ -2,7 +2,7 @@
 
 <%= bootstrap_form_for([@category, @project]) do |f| %>
   <%= f.text_field :name %>
-  <%= f.text_field :link, 'GitHub Link' %>
+  <%= f.text_field :link, label: 'GitHub Link' %>
   <%= f.text_area :description %>
   <%= f.submit data: {disable_with: "Saving...." }, class: "btn btn-success btn-block" %>
 <% end %>

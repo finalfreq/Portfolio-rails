@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
         flash[:notice] = "Category Successfully Updated"
         redirect_to category_path(@category)
       else
-        flash[:alert] = "Category was unable to be added."
+        flash[:alert] = "Category was unable to be updated."
         render :edit
       end
     end
