@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
       @project = @category.projects.new(project_params)
       if @project.save
         flash[:notice] = "Project Successfully Added"
-        redirect_to category_projects_path(@category)
+        redirect_to category_project_path(@category, @project)
       else
         flash[:alert] = "Project was unable to be added."
         render :new

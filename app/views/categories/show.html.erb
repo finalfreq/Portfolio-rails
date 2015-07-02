@@ -23,7 +23,7 @@
     <ul>
       <% @category.projects.each do |project| %>
       <div class="well">
-      <li> <%= project.name %></li>
+      <li> <%= link_to project.name, category_project_path(@category, project) %></li>
     </div>
     </ul>
       <% end %>
