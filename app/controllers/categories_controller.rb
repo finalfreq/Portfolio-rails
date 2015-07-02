@@ -14,9 +14,10 @@ class CategoriesController < ApplicationController
     def update
       @category = Category.find(params[:id])
       if @category.update(post_params)
-        flash[:alert] = "Category Successfully Updated"
+        flash[:notice] = "Category Successfully Updated"
         redirect_to category_path(@category)
       else
+        flash[:alert] = "Category was unable to be added."
         render :edit
       end
     end
@@ -24,9 +25,10 @@ class CategoriesController < ApplicationController
     def create
       @category = Category.new(post_params)
       if @category.save
-        flash[:alert] = "Category Successfully Added"
+        flash[:notice] = "Category Successfully Added"
         redirect_to category_path(@category)
       else
+        flash[:alert] = "Category was unable to be added."
         render :new
       end
     end
