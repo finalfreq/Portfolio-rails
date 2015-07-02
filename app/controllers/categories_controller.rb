@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
       if @category.save
         Admin.first.categories.push(@category)
         flash[:notice] = "Category Successfully Added"
-        redirect_to category_path(@category)
+        redirect_to categories_path
       else
         flash[:alert] = "Category was unable to be added."
         render :new
