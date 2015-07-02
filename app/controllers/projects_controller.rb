@@ -45,8 +45,9 @@ class ProjectsController < ApplicationController
 
     def destroy
       @project = Project.find(params[:id])
+      @category = Category.find(params[:category_id])
       @project.destroy
-      redirect_to category_path(@project.category)
+      redirect_to category_path(@category)
     end
 
 private
