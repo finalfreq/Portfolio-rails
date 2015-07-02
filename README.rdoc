@@ -1,28 +1,39 @@
-== README
+# Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This portfolio serves as what I have learned and done in my time at Epicodus.
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+To run this project you must have rails installed.
 
-* System dependencies
+Open project in terminal and run bundle to install necessary gems and run the following in terminal.
 
-* Configuration
+```
+rake db:create
+```
+```
+rake db:seed
+```
+```
+rake db:migrate
+```
+```
+rails s
+```
 
-* Database creation
+You should then be able to open on localhost:3000. Click on the categories tab in the nav bar, on categories page you can add a category.
+After adding a category you can then go the category individual page and then add a project to the category.
 
-* Database initialization
+### Bug reports
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you discover any bugs, feel free to create an issue on GitHub. Please add as much information as
+possible to help us fixing the possible bug. We also encourage you to help even more by forking and
+sending us a pull request.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Maintainers
+1. James Williams (https://github.com/finalfreq)
+
+
+## License
+MIT License. Copyright 2015
