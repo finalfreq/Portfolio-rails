@@ -22,7 +22,9 @@
     </p>
     <ul>
       <% @category.projects.each do |project| %>
-      <li> <%= category.project.name %>
+      <div class="well">
+      <li> <%= project.name %></li>
+    </div>
     </ul>
       <% end %>
   <% else  %>
