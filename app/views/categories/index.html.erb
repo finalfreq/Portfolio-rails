@@ -1,0 +1,9 @@
+<h1 class="page-header text-center">Languages and Skills</h1>
+
+<%= link_to "Add Category", new_category_path, class: "btn btn-success btn-block" %>
+
+<% @categories.each do |category| %>
+  <ul>
+    <li> <%= link_to category.name, category_path(category) %> </li>
+  </ul>
+<% end %>

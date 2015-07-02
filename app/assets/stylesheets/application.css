@@ -1,7 +1,0 @@
-//= require_self
-@import "bootstrap-sprockets";
-@import "bootswatch/cerulean/variables";
-@import "bootstrap";
-body { padding-top: 60px; }
-@import "bootswatch/cerulean/bootswatch";
-//= require rails_bootstrap_forms

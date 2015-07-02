@@ -1,0 +1,11 @@
+<%= content_for(:title, "Ruby | Freqy") %>
+
+<h1 class="page-header text-center"><%= @category.name%> </h1>
+<div class="btn-group btn-group-sm" role="group">
+
+  <%= link_to "Edit", edit_category_path(@category), class: "btn btn-info" %>
+  <%= link_to "Delete", category_path(@category), class: "btn btn-danger",
+                                        data: {confirm: "Remove Category?",
+                                                method: 'delete'} %>
+
+</div>
