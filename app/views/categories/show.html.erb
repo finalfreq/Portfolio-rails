@@ -20,13 +20,20 @@
       Below are some of my favorite <%= @category.name %> project's that I have worked on recently. I enjoy working with this language very much and hope you
       it shows in my work.
     </p>
-    <ul>
-      <% @category.projects.each do |project| %>
-      <div class="well">
-      <li> <%= link_to project.name, category_project_path(@category, project) %></li>
+    <div id="lang-group">
+      <% @category.projects.in_groups_of(2, false).each do |projects| %>
+      <div class="row clearfix">
+        <% projects.each do |project| %>
+          <div class="col-md-6">
+            <div class="well">
+              <h2 class="lead text-center"><%= link_to project.name, category_project_path(@category, project) %></h2>
+              <%= image_tag "program.png", class: 'img-responsive' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
     </div>
-    </ul>
-      <% end %>
   <% else  %>
   <p class="text-warning">
     It appears no projects have been added yet, add a project below.
