@@ -6,7 +6,6 @@ describe 'destroy lesson path' do
     project = Project.create(name:"name", link: 'link', description: 'test')
     visit category_project_path(category, project)
     click_on "Delete #{project.name}"
-    save_and_open_page
     expect(page).to have_content( "#{category.name}")
   end
 end
