@@ -9,9 +9,6 @@ class Ability
          can :manage, :all
        elsif user != nil
          can :read, :all
-         can :manage, Project, :user_id => user.id
-         can :manage, Category, :user_id => user.id
-         can :manage, User, :id => user.id
        else
          can :read, :all
        end
