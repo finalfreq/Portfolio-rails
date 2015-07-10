@@ -10,13 +10,14 @@ Open project in terminal and run bundle to install necessary gems and run the fo
 
 ```
 rake db:create
+rake db:seed
 rake db:migrate
 rails s
 ```
 
 You should then be able to open on localhost:3000. Click on the categories tab in the nav bar, on categories page you can add a category.
 After adding a category you can then go the category individual page and then add a project to the category. Authentication is set up using devise and authorization is through CanCanCan.
-In order to become Admin can only be done on the back end.
+In order to become Admin can only be done on the back end. I have seeded myself in DB in order for about page to render correctly. 
 
 ### Bug reports
 
