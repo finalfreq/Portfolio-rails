@@ -4,12 +4,14 @@
   <% @users.in_groups_of(2, false).each do |group| %>
   <div class="row clearfix">
     <% group.each do |user| %>
-      <div class="col-md-6">
-        <div class="well">
-          <h2 class="lead text-center"><%= link_to user.name, user_path(user) %></h2>
-          <%= image_tag "contact.jpg", class: 'img-responsive' %>
+      <%= link_to user_path(user) do %>
+        <div class="col-md-6">
+          <div class="well">
+            <h2 class="lead text-center"><%= user.name %></h2>
+            <%= image_tag "contact.jpg", class: 'img-responsive' %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <% end %>
