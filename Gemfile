@@ -10,6 +10,8 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'cancancan'
+gem 'devise'
 
 group :development do
   gem 'byebug'
