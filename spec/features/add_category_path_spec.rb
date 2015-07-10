@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "The adding category path" do
   it "adds a category" do
-    Admin.create(name: "James Williams")
+    FactoryGirl.create(:user)
     visit categories_path
     click_on "Add Category"
     fill_in "Name", with: "test"
@@ -12,7 +12,7 @@ describe "The adding category path" do
   end
 
   it "will give a(n) error(s) when a name is not entered" do
-    Admin.create(name: "James")
+    FactoryGirl.create(:user)
     visit new_category_path
     click_on "Create Category"
     expect(page).to have_content 'errors'

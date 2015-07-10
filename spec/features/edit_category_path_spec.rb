@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "The Edit Category path" do
   it "edits a category" do
-    category = Category.create(name: "name", description:  'test')
+    category = FactoryGirl.create(:category)
     visit category_path(category)
     click_on "Edit #{category.name}"
     fill_in 'Name', with: "test"
@@ -12,7 +12,7 @@ describe "The Edit Category path" do
   end
 
   it "gives error when no content is entered" do
-    category = Category.create(name: "test", description: 'test')
+    category = FactoryGirl.create(:category)
     visit category_path(category)
     click_on "Edit #{category.name}"
     fill_in 'Name', with: ""

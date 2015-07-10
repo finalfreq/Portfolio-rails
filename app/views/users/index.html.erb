@@ -1,0 +1,21 @@
+<%= content_for(:title, "All Users | Freqy") %>
+<% if @users.any? %>
+  <h1 class="page-header text-center">Current Users of Freqy</h1>
+  <% @users.in_groups_of(2, false).each do |group| %>
+  <div class="row clearfix">
+    <% group.each do |user| %>
+      <div class="col-md-6">
+        <div class="well">
+          <h2 class="lead text-center"><%= link_to user.name, user_path(user) %></h2>
+          <%= image_tag "contact.jpg", class: 'img-responsive' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+<% else %>
+
+<p class="lead">
+  No users are currently registered.
+</p>
+<% end %>

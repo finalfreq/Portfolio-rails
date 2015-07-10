@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
     def create
       @category = Category.new(category_params)
       if @category.save
-        Admin.first.categories.push(@category)
+        current_user.categories.push(@category)
         flash[:notice] = "Category Successfully Added"
         redirect_to categories_path
       else

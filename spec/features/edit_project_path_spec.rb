@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "The edit project path" do
   it "edits a project" do
-    category = Category.create(name: "name", description:  'test')
-    project = Project.create(name:"name", link: 'link', description: 'test')
+    category = FactoryGirl.create(:category)
+    project = FactoryGirl.create(:project)
     visit category_project_path(category, project)
     click_on "Edit #{project.name}"
     fill_in "Name", with: "test"
@@ -14,8 +14,8 @@ describe "The edit project path" do
   end
 
   it "will give a(n) error(s) when something is not entered" do
-    category = Category.create(name: "name", description:  'test')
-    project = Project.create(name:"name", link: 'link', description: 'test')
+    category = FactoryGirl.create(:category)
+    project = FactoryGirl.create(:project)
     visit edit_category_project_path(category, project)
     fill_in "Name", with: ""
     fill_in "GitHub Link", with: "Stuff"
