@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "The edit project path" do
   it "edits a project" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     category = FactoryGirl.create(:category)
     project = FactoryGirl.create(:project)
     visit category_project_path(category, project)
@@ -14,6 +16,8 @@ describe "The edit project path" do
   end
 
   it "will give a(n) error(s) when something is not entered" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     category = FactoryGirl.create(:category)
     project = FactoryGirl.create(:project)
     visit edit_category_project_path(category, project)

@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "The adding project path" do
   it "adds a project to a category" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     category = FactoryGirl.create(:category)
     visit category_path(category)
     click_on "Add #{category.name} Project"

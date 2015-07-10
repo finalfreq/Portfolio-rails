@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "The Edit Category path" do
   it "edits a category" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     category = FactoryGirl.create(:category)
     visit category_path(category)
     click_on "Edit #{category.name}"
@@ -12,6 +14,8 @@ describe "The Edit Category path" do
   end
 
   it "gives error when no content is entered" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     category = FactoryGirl.create(:category)
     visit category_path(category)
     click_on "Edit #{category.name}"

@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe "The adding category path" do
   it "adds a category" do
-    FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     visit categories_path
     click_on "Add Category"
     fill_in "Name", with: "test"
