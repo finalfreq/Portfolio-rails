@@ -27,15 +27,15 @@
         <%= comment.body %>
       </p>
       <p>
-        by <%= comment.user.name %> <%= time_ago_in_words(comment.updated_at)%> <span class=></span>
+        by <%= comment.user.name %> <span class=></span>
       </p>
       <% if can? :manage, comment %>
-        <%= link_to edit_post_comment_path(@post, comment) do %>
+        <%= link_to edit_post_comment_path(@post, comment), id: 'change' do %>
           <span id='edit' class="glyphicon glyphicon-pencil"></span>
         <% end %>
       <% end %>
       <% if can? :manage, comment %>
-        <%= link_to post_comment_path(@post, comment), data: { confirm: 'Are you sure?',
+        <%= link_to post_comment_path(@post, comment), id: 'destroy', data: { confirm: 'Are you sure?',
             method: 'delete' } do %>
       <span id='edit'  class="glyphicon glyphicon-trash"></span>
         <% end %>
