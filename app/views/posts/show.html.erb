@@ -1,7 +1,15 @@
-<%= content_for :title, " #{post.name} | Freqy" %>
+<%= content_for :title, " #{@post.name} | Freqy" %>
 
 <h1 class="page-header text-center"><%= @post.name %></h1>
 
-<p class="lead">
-  <%= @post.body %>
-</p>
+<div class="link-group">
+  <%= link_to "Edit #{@post.name}", edit_post_path(@post), class: "btn btn-info btn-block" %>
+  <%= link_to "Delete #{@post.name}", post_path(@post), class: "btn btn-danger btn-block",
+                                        data: {confirm: "Remove post?",
+                                                method: 'delete'} %>
+</div>
+<div id="post">
+  <p class="lead">
+    <%= @post.body %>
+  </p>
+</div>

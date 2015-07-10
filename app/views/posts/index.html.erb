@@ -3,7 +3,7 @@
 
 <h1 class="page-header text-center">My Blog posts</h1>
 <% if can? :manage, Post %>
-<%= link_to "Add Blog", new_post_path, class: "btn btn-success btn-block" %>
+<%= link_to "Add Post", new_post_path, class: "btn btn-success btn-block" %>
 <% end %>
 <div id="lang-group">
   <% @posts.in_groups_of(2, false).each do |group| %>
