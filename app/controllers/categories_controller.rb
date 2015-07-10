@@ -1,18 +1,18 @@
 class CategoriesController < ApplicationController
+    before_action :authenticate_user!
+    load_and_authorize_resource param_method: :category_params
+    load_and_authorize_resource :user
+
     def index
-      @categories = Category.all
     end
 
     def new
-      @category = Category.new
     end
 
     def edit
-      @category = Category.find(params[:id])
     end
 
     def update
-      @category = Category.find(params[:id])
       if @category.update(category_params)
         flash[:notice] = "Category Successfully Updated"
         redirect_to category_path(@category)
@@ -35,11 +35,9 @@ class CategoriesController < ApplicationController
     end
 
     def show
-      @category = Category.find(params[:id])
     end
 
     def destroy
-      @category = Category.find(params[:id])
       @category.destroy
       redirect_to categories_path
     end

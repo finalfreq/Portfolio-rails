@@ -1,6 +1,6 @@
-# Portfolio
+# Portfolio Maker
 
-This portfolio serves as what I have learned and done in my time at Epicodus.
+This app serves as a way for Web app designers and developers to share their current skill sets and projects related to those skills.
 
 ## Usage
 
@@ -10,19 +10,12 @@ Open project in terminal and run bundle to install necessary gems and run the fo
 
 ```
 rake db:create
-```
-```
-rake db:seed
-```
-```
 rake db:migrate
-```
-```
 rails s
 ```
 
-You should then be able to open on localhost:3000. Click on the categories tab in the nav bar, on categories page you can add a category.
-After adding a category you can then go the category individual page and then add a project to the category.
+You should then be able to open on localhost:3000. You must register with site to use it. Devise is used for all user authentication and cancancan is used for authorization. To create an admin it must be done through the back-end at this time.
+Once you are registered you can click on category to add new skills and then from the skills page add projects around those skills.
 
 ### Bug reports
 
