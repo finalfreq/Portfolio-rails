@@ -1,0 +1,21 @@
+<%= content_for(:title, "Categories | Freqy" ) %>
+
+
+<h1 class="page-header text-center">My Blog posts</h1>
+<% if can? :manage, Post %>
+<%= link_to "Add Blog", new_post_path, class: "btn btn-success btn-block" %>
+<% end %>
+<div id="lang-group">
+  <% @posts.in_groups_of(2, false).each do |group| %>
+  <div class="row clearfix">
+    <% group.each do |post| %>
+      <div class="col-md-6">
+        <div class="well">
+          <h2 class="lead text-center"><%= link_to post.name, post_path(post) %></h2>
+          <%= image_tag "program.png", class: 'img-responsive' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>

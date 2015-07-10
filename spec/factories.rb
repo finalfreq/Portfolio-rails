@@ -14,7 +14,10 @@ FactoryGirl.define do
   factory(:project) do
     name('rails project')
     description('built project using rails')
-    category
+  end
 
+  factory(:post) do
+    name('rails project')
+    body('built project using rails')
   end
 end
