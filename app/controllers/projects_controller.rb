@@ -3,20 +3,10 @@ class ProjectsController < ApplicationController
     load_and_authorize_resource :category
     before_action :authenticate_user!
 
-
-    def index
-      @category = Category.find(params[:category_id])
-      @projects = @category.projects
-    end
-
     def new
-      @category = Category.find(params[:category_id])
-      @project = @category.projects.new
     end
 
     def edit
-      @category = Category.find(params[:category_id])
-      @project = Project.find(params[:id])
     end
 
     def update
@@ -35,6 +25,7 @@ class ProjectsController < ApplicationController
       @category = Category.find(params[:category_id])
       @project = @category.projects.new(project_params)
       if @project.save
+        @category.user.projects.push(@project)
         flash[:notice] = "Project Successfully Added"
         redirect_to category_path(@category)
       else
@@ -44,13 +35,10 @@ class ProjectsController < ApplicationController
     end
 
     def show
-      @category = Category.find(params[:category_id])
-      @project = Project.find(params[:id])
+
     end
 
     def destroy
-      @project = Project.find(params[:id])
-      @category = Category.find(params[:category_id])
       @project.destroy
       redirect_to category_path(@category)
     end
