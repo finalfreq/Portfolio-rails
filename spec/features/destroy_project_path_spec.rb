@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-describe 'destroy lesson path' do
-  it 'will destroy the lesson' do
-    user = FactoryGirl.create(:user)
+describe 'destroy project path' do
+  it 'will destroy the project' do
+    user = FactoryGirl.create(:user_as_admin)
     login_as(user, :scope => :user)
-    category = FactoryGirl.create(:category)
-    project = FactoryGirl.create(:project)
+    category = FactoryGirl.create(:category, user_id: user.id)
+    project = FactoryGirl.create(:project, category_id: category.id)
     visit category_project_path(category, project)
     click_on "Delete #{project.name}"
     expect(page).to have_content( "#{category.name}")
