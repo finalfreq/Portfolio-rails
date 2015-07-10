@@ -8,6 +8,6 @@ describe 'destroy project path' do
     project = FactoryGirl.create(:project, category_id: category.id)
     visit category_project_path(category, project)
     click_on "Delete #{project.name}"
-    expect(page).to have_content( "#{category.name}")
+    expect(page).to have_content category.name
   end
 end
