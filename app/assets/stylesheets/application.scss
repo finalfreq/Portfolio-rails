@@ -35,3 +35,20 @@ a {
     font-size: 24px;
   }
 }
+
+
+
+.comments{
+  margin-top: 1%;
+  padding: 5px ;
+  background: #767e83;
+  .comment {
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #1c1e22;
+    background: #1c1e22;
+    color: #01edd4;
+  }
+
+}

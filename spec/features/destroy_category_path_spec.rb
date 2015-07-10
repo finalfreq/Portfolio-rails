@@ -7,6 +7,6 @@ require 'rails_helper'
       category = FactoryGirl.create(:category)
       visit category_path(category)
       click_on "Delete #{category.name}"
-      expect(page).to have_content('Add Category')
+      expect(page).to have_content 'Add Category'
     end
   end

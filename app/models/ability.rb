@@ -9,6 +9,8 @@ class Ability
          can :manage, :all
        elsif user != nil
          can :read, :all
+         can :manage, user
+         can :manage, Comment, user_id: user.id
        else
          can :read, :all
        end

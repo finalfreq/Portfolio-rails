@@ -13,3 +13,34 @@
     <%= @post.body %>
   </p>
 </div>
+
+
+<div id="post-comment">
+  <%= render 'comments/form' %>
+</div>
+<% if @post.comments.any? %>
+<div class="comments">
+  <% @post.comments.each do |comment| %>
+    <div class="comment">
+
+      <p class="lead">
+        <%= comment.body %>
+      </p>
+      <p>
+        by <%= comment.user.name %> <%= time_ago_in_words(comment.updated_at)%> <span class=></span>
+      </p>
+      <% if can? :manage, comment %>
+        <%= link_to edit_post_comment_path(@post, comment) do %>
+          <span id='edit' class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+      <% end %>
+      <% if can? :manage, comment %>
+        <%= link_to post_comment_path(@post, comment), data: { confirm: 'Are you sure?',
+            method: 'delete' } do %>
+      <span id='edit'  class="glyphicon glyphicon-trash"></span>
+        <% end %>
+    <% end %>
+    </div>
+  <% end %>
+</div>
+<% end %>
