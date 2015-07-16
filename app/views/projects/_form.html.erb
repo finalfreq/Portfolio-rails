@@ -1,8 +1,6 @@
-<%= render 'layouts/errors', object: @project %>
-
-<%= bootstrap_form_for([@category, @project]) do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :link, label: 'GitHub Link' %>
-  <%= f.text_area :description %>
+<%= bootstrap_form_for [@category, @project], remote: true do |f| %>
+  <%= f.text_field :name, required: true %>
+  <%= f.text_field :link, label: 'GitHub Link', required: true %>
+  <%= f.text_area :description, required: true %>
   <%= f.submit data: {disable_with: "Saving...." }, class: "btn btn-success btn-block" %>
 <% end %>

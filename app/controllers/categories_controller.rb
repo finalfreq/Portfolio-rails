@@ -4,7 +4,6 @@ class CategoriesController < ApplicationController
     load_and_authorize_resource :user
 
     def index
-      @category = Category.new
     end
 
     def new
@@ -28,7 +27,7 @@ class CategoriesController < ApplicationController
       if @category.save
         respond_to do |format|
           format.html { redirect_to @category}
-          format.js 
+          format.js
         end
       else
         flash[:alert] = "Category was unable to be added."

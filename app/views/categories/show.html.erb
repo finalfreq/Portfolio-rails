@@ -4,7 +4,7 @@
 
 
 <div class="link-group">
-  <%= link_to "Add #{@category.name} Project", new_category_project_path(@category), class: "btn btn-success btn-block" %>
+  <%= link_to "Add #{@category.name} Project", new_category_project_path(@category), remote: true, class: "btn btn-success btn-block", id: 'fake' %>
   <%= link_to "Edit #{@category.name}", edit_category_path(@category), class: "btn btn-info btn-block" %>
   <%= link_to "Delete #{@category.name}", category_path(@category), class: "btn btn-danger btn-block",
                                         data: {confirm: "Remove Category?",
@@ -20,24 +20,19 @@
       Below are some of my favorite <%= @category.name %> project's that I have worked on recently. I enjoy working with this language very much and hope you
       it shows in my work.
     </p>
-    <div id="lang-group">
-      <% @category.projects.in_groups_of(2, false).each do |projects| %>
-      <div class="row clearfix">
-        <% projects.each do |project| %>
-          <div class="col-md-6">
-            <div class="well">
-              <h2 class="lead text-center"><%= link_to project.name, category_project_path(@category, project) %></h2>
-              <%= image_tag "program.png", class: 'img-responsive' %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-    </div>
-  <% else  %>
-  <p class="text-warning">
-    It appears no projects have been added yet, add a project below.
-  </p>
-
   <% end %>
+  <div id="lang-group">
+    <% @category.projects.in_groups_of(2, false).each do |projects| %>
+    <div class="row clearfix">
+      <% projects.each do |project| %>
+        <div class="col-md-6">
+          <div class="well">
+            <h2 class="lead text-center"><%= link_to project.name, category_project_path(@category, project) %></h2>
+            <%= image_tag "program.png", class: 'img-responsive' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
 </div>
