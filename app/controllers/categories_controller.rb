@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
     load_and_authorize_resource :user
 
     def index
+      @category = Category.new
     end
 
     def new
@@ -25,9 +26,10 @@ class CategoriesController < ApplicationController
     def create
       @category = Category.new(category_params)
       if @category.save
-        current_user.categories.push(@category)
-        flash[:notice] = "Category Successfully Added"
-        redirect_to categories_path
+        respond_to do |format|
+          format.html { redirect_to @category}
+          format.js 
+        end
       else
         flash[:alert] = "Category was unable to be added."
         render :new

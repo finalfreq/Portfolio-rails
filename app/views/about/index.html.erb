@@ -1,5 +1,5 @@
 <%= content_for(:title, "About | Freqy") %>
-<h1 class="page-header text-center">About <%= @admin.name %></h1>
+<h1 class="page-header text-center">About James Williams</h1>
 
 <div class="row">
   <div class="col-md-4">
@@ -17,8 +17,8 @@
   </div>
 </div>
 <h1 class="page-header text-center">Languages and Skills</h1>
-<% if @admin.categories.any? %>
-  <% @admin.categories.in_groups_of(2, false).each do |categories| %>
+<% if @categories.any? %>
+  <% @categories.in_groups_of(2, false).each do |categories| %>
   <div class="row clearfix">
     <% categories.each do |category| %>
       <div class="col-md-6">

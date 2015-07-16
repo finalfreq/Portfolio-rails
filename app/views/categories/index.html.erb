@@ -3,7 +3,9 @@
 
 <h1 class="page-header text-center">My Languages and Skills</h1>
 
-<%= link_to "Add Category", new_category_path, class: "btn btn-success btn-block" %>
+<%= link_to "Add Category", new_category_path, remote: true, class: "btn btn-success btn-block", id: 'add-category' %>
+
+
 <div id="lang-group">
   <% @categories.in_groups_of(2, false).each do |categories| %>
   <div class="row clearfix">
@@ -11,7 +13,7 @@
       <div class="col-md-6">
         <div class="well">
           <h2 class="lead text-center"><%= link_to category.name, category_path(category) %></h2>
-          <%= image_tag "program.png", class: 'img-responsive' %>
+          <%= image_tag "program.png", class: "img-responsive" %>
         </div>
       </div>
     <% end %>
