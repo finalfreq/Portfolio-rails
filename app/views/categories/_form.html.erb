@@ -1,6 +1,4 @@
-<%= render 'layouts/errors', object: @category %>
-
-<%= bootstrap_form_for @category, remote: true  do |f| %>
+<%= bootstrap_form_for @category, remote: true do |f| %>
   <%= f.text_field :name, required: true %>
   <%= f.text_area :description, require: true %>
   <%= f.submit data: {disable_with: "Saving...." }, class: "btn btn-success btn-block" %>

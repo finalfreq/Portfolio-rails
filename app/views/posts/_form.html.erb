@@ -1,5 +1,4 @@
-
-<%= bootstrap_form_for(@post) do |f| %>
+<%= bootstrap_form_for @post, remote: true do |f| %>
   <%= f.text_field :name, required: true %>
   <%= f.text_area :body, required: true %>
   <%= f.submit data: {disable_with: "Saving...." }, class: "btn btn-success btn-block" %>

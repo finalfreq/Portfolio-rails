@@ -22,7 +22,10 @@ end
 
 def create
   if @post.save(post_params)
-    redirect_to @post, notice: "Successfully created new post"
+    respond_to do |format|
+      format.html { redirect_to @category}
+      format.js
+    end
   else
     render :new, alert: "There was an error creating post"
   end
