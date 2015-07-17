@@ -21,11 +21,13 @@
       <% end %>
       <li>Mike Goren: mike@mortalwombat.net </li>
       <li>Debbie Cravey: deborah.cravey@yahoo.com </li>
-      <li> <%= link_to "Add Reference", new_user_reference_path(current_user), remote: true %> </li>
-    </ul>
-    <div id="add-reference">
-      <%= render 'references/form' %>
-    </div>
+      <% if current_user %>
+        <li> <%= link_to "Add Reference", new_user_reference_path(current_user), remote: true %> </li>
+      </ul>
+      <div id="add-reference">
+        <%= render 'references/form' %>
+      </div>
+    <% end %>
   </div>
 </div>
 <h1 class="page-header text-center">Languages and Skills</h1>
