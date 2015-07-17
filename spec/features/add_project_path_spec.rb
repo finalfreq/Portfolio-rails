@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "The adding project path" do
-  it "adds a project to a category" do
+  it "adds a project to a category", js: true do
     user = FactoryGirl.create(:user_as_admin)
     login_as(user, :scope => :user)
     category = FactoryGirl.create(:category, user_id: user.id)
@@ -11,15 +11,6 @@ describe "The adding project path" do
     fill_in "GitHub Link", with: "Stuff"
     fill_in "Description", with: "more stuff"
     click_on "Create Project"
-    expect(page).to have_content "Added"
-  end
-
-  it "will give a(n) error(s) when a name is not entered" do
-    user = FactoryGirl.create(:user_as_admin)
-    login_as(user, :scope => :user)
-    category = FactoryGirl.create(:category)
-    visit new_category_project_path(category)
-    click_on "Create Project"
-    expect(page).to have_content 'errors'
+    expect(page).to have_content "Add #{category.name} Project"
   end
 end

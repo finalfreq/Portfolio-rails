@@ -1,3 +1,6 @@
+<%= render 'layouts/errors', object: @category %>
+
+
 <%= bootstrap_form_for @category, remote: true do |f| %>
   <%= f.text_field :name, required: true %>
   <%= f.text_area :description, require: true %>
