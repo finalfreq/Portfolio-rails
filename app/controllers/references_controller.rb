@@ -12,9 +12,6 @@ class ReferencesController < ApplicationController
         format.html {redirect_to root_path}
         format.js
       end
-    else
-      flash[:alert] = "There was a problem with your reference - form empty"
-      redirect_to root_path
     end
   end
 
