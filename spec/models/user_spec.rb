@@ -7,5 +7,6 @@ describe User do
   it { should have_many :projects}
   it { should have_many :categories}
   it { should have_many :comments}
+  it { should have_many :references}
 
 end

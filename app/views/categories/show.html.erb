@@ -5,7 +5,7 @@
 
 <div class="link-group">
   <%= link_to "Add #{@category.name} Project", new_category_project_path(@category), remote: true, class: "btn btn-success btn-block", id: 'fake' %>
-  <%= link_to "Edit #{@category.name}", edit_category_path(@category), class: "btn btn-info btn-block" %>
+  <%= link_to "Edit #{@category.name}", edit_category_path(@category), remote: true, class: "btn btn-info btn-block" %>
   <%= link_to "Delete #{@category.name}", category_path(@category), class: "btn btn-danger btn-block",
                                         data: {confirm: "Remove Category?",
                                                 method: 'delete'} %>

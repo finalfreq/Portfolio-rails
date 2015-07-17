@@ -17,12 +17,12 @@
 //= require_tree .
 
 $(function() {
-
-  $("#test1").click(function() {
-    $("p").show();
-
+  $('#references').click(function() {
+    alert('hi')
   });
 
-
-
+  $('#comment').click(function(){
+    $('#post-comment').toggle();
+    $('#comment').hide();
+  });
 });

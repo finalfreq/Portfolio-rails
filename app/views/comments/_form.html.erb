@@ -1,5 +1,5 @@
 <%= render "layouts/errors", object: @comment %>
 <%= bootstrap_form_for [@post, @comment], remote: true do |f| %>
-  <%= f.text_area :body, placeholder: 'Add Comment', required: true %>
+  <%= f.text_area :body, placeholder: 'Add Comment', required: true, id:'comments-body' %>
   <%= f.submit data:{disable_with: 'Commenting....'}, class: 'btn btn-primary btn-block' %>
 <% end %>

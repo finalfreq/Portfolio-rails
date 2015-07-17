@@ -7,6 +7,6 @@ require 'rails_helper'
       post = FactoryGirl.create(:post)
       visit post_path(post)
       click_on "Delete #{post.name}"
-      expect(page).to have_content "My Blog posts"
+      expect(page).to have_content "Current Blog posts"
     end
   end

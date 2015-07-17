@@ -1,7 +1,7 @@
 <%= content_for(:title, "Categories | Freqy" ) %>
 
 
-<h1 class="page-header text-center">My Blog posts</h1>
+<h1 class="page-header text-center">Current Blog posts</h1>
 <% if can? :manage, Post %>
 <%= link_to "Add Post", new_post_path, remote: true, class: "btn btn-success btn-block", id: 'add-post' %>
 <% end %>

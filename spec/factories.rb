@@ -25,7 +25,13 @@ FactoryGirl.define do
     name 'rails project'
     body 'built project using rails'
   end
+
   factory :comment  do
     body 'built project using rails'
+  end
+
+  factory :reference  do
+    name 'heyoka machoka'
+    email 'Heyoka@mail.com'
   end
 end
