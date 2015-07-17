@@ -18,14 +18,6 @@ class ReferencesController < ApplicationController
     end
   end
 
-  def edit
-
-  end
-
-  def update
-
-  end
-
 private
   def reference_params
     params.require(:reference).permit(:name, :email)
