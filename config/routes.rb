@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'about#index'
 
   resources :about, :only => [:index]
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index] do
+    resources 'references', except: [:show, :index]
+  end
 
   resources 'categories' do
     resources 'projects', except: :index
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
   resources 'posts' do
     resources 'comments', except: :index
   end
+
 end

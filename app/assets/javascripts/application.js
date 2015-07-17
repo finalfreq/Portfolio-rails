@@ -17,8 +17,15 @@
 //= require_tree .
 
 $(function() {
-  $('#references').click(function() {
-    alert('hi')
+  $('#see-references').click(function() {
+    $('#reference-list').show();
+    $('#hide-references').show();
+    $('#see-references').hide();
+  });
+  $('#hide-references').click(function() {
+    $('#reference-list').hide();
+    $('#hide-references').hide();
+    $('#see-references').show();
   });
 
   $('#comment').click(function(){
