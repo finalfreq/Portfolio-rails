@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
     load_and_authorize_resource param_method: :project_params
     load_and_authorize_resource :category
-    before_action :authenticate_user!
+
 
     def new
     end

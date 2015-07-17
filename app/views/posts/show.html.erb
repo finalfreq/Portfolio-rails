@@ -1,25 +1,28 @@
 <%= content_for :title, " #{@post.name} | Freqy" %>
 
 <h1 class="page-header text-center"><%= @post.name %></h1>
-
-<div class="link-group">
-  <%= link_to "Edit #{@post.name}", edit_post_path(@post), class: "btn btn-info btn-block" %>
-  <%= link_to "Delete #{@post.name}", post_path(@post), class: "btn btn-danger btn-block",
-                                        data: {confirm: "Remove post?",
-                                                method: 'delete'} %>
-</div>
+<% if can? :manage, Post %>
+  <div class="link-group">
+    <%= link_to "Edit #{@post.name}", edit_post_path(@post), class: "btn btn-info btn-block" %>
+    <%= link_to "Delete #{@post.name}", post_path(@post), class: "btn btn-danger btn-block",
+                                          data: {confirm: "Remove post?",
+                                                  method: 'delete'} %>
+  </div>
+<% end %>
 <div id="post">
   <p class="lead">
     <%= @post.body %>
   </p>
 </div>
 
-
-<div id="post-comment">
-  <%= render 'comments/form' %>
-</div>
+<% if current_user != nil %>
+  <div id="post-comment">
+    <%= render 'comments/form' %>
+  </div>
 <button class="btn btn-primary btn-block" id="comment">Add Comment</button>
+<% end %>
 <% if @post.comments.any? %>
+<h3>Comments:</h3>
 <div class="comments">
   <% @post.comments.each do |comment| %>
     <div class="comment">

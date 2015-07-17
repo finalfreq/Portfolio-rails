@@ -2,14 +2,14 @@
 
 <h1 class="page-header text-center"><%= @project.name%> </h1>
 
-
-<div class="link-group">
-  <%= link_to "Edit #{@project.name}", edit_category_project_path(@category, @project), class: "btn btn-info btn-block" %>
-  <%= link_to "Delete #{@project.name}", category_project_path(@category, @project), class: "btn btn-danger btn-block",
-                                        data: {confirm: "Remove Project?",
-                                                method: 'delete'} %>
-</div>
-
+<% if can? :manage, Post %>
+  <div class="link-group">
+    <%= link_to "Edit #{@project.name}", edit_category_project_path(@category, @project), class: "btn btn-info btn-block" %>
+    <%= link_to "Delete #{@project.name}", category_project_path(@category, @project), class: "btn btn-danger btn-block",
+                                          data: {confirm: "Remove Project?",
+                                                  method: 'delete'} %>
+  </div>
+<% end %>
 <h1 class="page-center">Project Information</h1>
 <p class="lead">
   <%= @project.description %>

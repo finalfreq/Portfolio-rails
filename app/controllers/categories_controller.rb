@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-    before_action :authenticate_user!
+
     load_and_authorize_resource param_method: :category_params
     load_and_authorize_resource :user
 

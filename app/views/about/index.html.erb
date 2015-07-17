@@ -21,7 +21,7 @@
       <% end %>
       <li>Mike Goren: mike@mortalwombat.net </li>
       <li>Debbie Cravey: deborah.cravey@yahoo.com </li>
-      <% if current_user %>
+      <% if current_user != nil %>
         <li> <%= link_to "Add Reference", new_user_reference_path(current_user), remote: true %> </li>
       </ul>
       <div id="add-reference">
