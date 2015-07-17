@@ -8,7 +8,10 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
     if @comment.save
       current_user.comments.push(@comment)
-      redirect_to post_path(@post), notice: "Your comment has been submitted!"
+      respond_to do |format|
+        format.html {redirect_to @post}
+        format.js
+      end
     else
       flash[:alert] = "There was a problem with your comment - form empty"
       redirect_to post_path(@post)
