@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-17T11:50:41-07:00">2015-07-17T11:50:41-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-17T22:47:33-07:00">2015-07-17T22:47:33-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.41%</span></span>
+    (<span class="covered_percent"><span class="green">98.42%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.57
+         1.56
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>46</b> files in total.
-    <b>441</b> relevant lines. 
-    <span class="green"><b>434</b> lines covered</span> and
+    <b>47</b> files in total.
+    <b>444</b> relevant lines. 
+    <span class="green"><b>437</b> lines covered</span> and
     <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -72,10 +72,10 @@
       
       <tr>
         <td class="strong"><a href="#efde5fa70fb0b47972543b42fd84e85f418c1f63" class="src_link" title="app/controllers/categories_controller.rb">app/controllers/categories_controller.rb</a></td>
-        <td class="green strong">92.86 %</td>
+        <td class="green strong">92.59 %</td>
         <td>50</td>
-        <td>28</td>
-        <td>26</td>
+        <td>27</td>
+        <td>25</td>
         <td>2</td>
         <td>1.1</td>
       </tr>
@@ -92,10 +92,10 @@
       
       <tr>
         <td class="strong"><a href="#cf778a142fe60ecbe5456f1101869f375899b35d" class="src_link" title="app/controllers/projects_controller.rb">app/controllers/projects_controller.rb</a></td>
-        <td class="green strong">93.55 %</td>
+        <td class="green strong">93.33 %</td>
         <td>52</td>
-        <td>31</td>
-        <td>29</td>
+        <td>30</td>
+        <td>28</td>
         <td>2</td>
         <td>1.1</td>
       </tr>
@@ -108,6 +108,16 @@
         <td>13</td>
         <td>0</td>
         <td>1.1</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#24471f33a39ab3c8e93d1fa276f184b995dd3116" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>9</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -703,10 +713,10 @@
         <div class="source_table" id="efde5fa70fb0b47972543b42fd84e85f418c1f63">
   <div class="header">
     <h3>app/controllers/categories_controller.rb</h3>
-    <h4><span class="green">92.86 %</span> covered</h4>
+    <h4><span class="green">92.59 %</span> covered</h4>
     <div>
-      <b>28</b> relevant lines. 
-      <span class="green"><b>26</b> lines covered</span> and
+      <b>27</b> relevant lines. 
+      <span class="green"><b>25</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -720,10 +730,10 @@
           <code class="ruby">class CategoriesController &lt; ApplicationController</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="2">
           
-          <code class="ruby">    before_action :authenticate_user!</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -1303,10 +1313,10 @@
         <div class="source_table" id="cf778a142fe60ecbe5456f1101869f375899b35d">
   <div class="header">
     <h3>app/controllers/projects_controller.rb</h3>
-    <h4><span class="green">93.55 %</span> covered</h4>
+    <h4><span class="green">93.33 %</span> covered</h4>
     <div>
-      <b>31</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
+      <b>30</b> relevant lines. 
+      <span class="green"><b>28</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -1332,10 +1342,10 @@
           <code class="ruby">    load_and_authorize_resource :category</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">    before_action :authenticate_user!</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -1783,6 +1793,78 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="24471f33a39ab3c8e93d1fa276f184b995dd3116">
+  <div class="header">
+    <h3>app/controllers/users_controller.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class UsersController &lt; ApplicationController</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before_action :authenticate_user!</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  load_and_authorize_resource</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def index</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def show</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
@@ -6867,7 +6949,7 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit categories_path</code>
+          <code class="ruby">    visit users_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">

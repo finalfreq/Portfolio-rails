@@ -914,7 +914,7 @@
       ],
       "/Users/christopherheering/Desktop/Portfolio-rails/app/controllers/categories_controller.rb": [
         1,
-        1,
+        null,
         1,
         1,
         null,
@@ -1081,7 +1081,7 @@
         1,
         1,
         1,
-        1,
+        null,
         null,
         1,
         null,
@@ -1165,8 +1165,19 @@
         null,
         null,
         null
+      ],
+      "/Users/christopherheering/Desktop/Portfolio-rails/app/controllers/users_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1437159040
+    "timestamp": 1437198452
   }
 }
