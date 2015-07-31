@@ -1,11 +1,11 @@
-<%= content_for(:title, "About | Freqy") %>
+<%= content_for(:title, "About | JW") %>
 <h1 class="page-header text-center">About James Williams</h1>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-5">
     <%= image_tag "me.jpg", class: 'img-responsive' %>
   </div>
-  <div class="col-md-6 col-md-offset-2">
+  <div class="col-md-6 col-md-offset-1">
 
     <p class="lead">
       After spending over 6 years in the customer service industry as a leader, team player, and customer satisfaction specialist, I have started working towards
@@ -30,14 +30,14 @@
     <% end %>
   </div>
 </div>
-<h1 class="page-header text-center">Languages and Skills</h1>
-<% if @categories.any? %>
-  <% @categories.in_groups_of(2, false).each do |categories| %>
+<h1 class="page-header text-center">Recent Projects</h1>
+<% if @projects.any? %>
+  <% @projects.in_groups_of(2, false).each do |projects| %>
   <div class="row clearfix">
-    <% categories.each do |category| %>
+    <% projects.each do |project| %>
       <div class="col-md-6">
         <div class="well">
-          <h2 class="lead text-center"><%= link_to category.name, category_path(category) %></h2>
+          <h2 class="lead text-center"><%= link_to project.name, category_project_path(project.category_id, project) %></h2>
           <%= image_tag "program.png", class: 'img-responsive' %>
         </div>
       </div>
@@ -46,6 +46,6 @@
   <% end %>
 <% else %>
 
-<p class="lead"> No Languages or Skills have been added at this time </p>
+<p class="lead"> No recent projects at this time </p>
 
 <% end %>

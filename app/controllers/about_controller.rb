@@ -1,6 +1,6 @@
 class AboutController < ApplicationController
   def index
-    @categories = Category.all
+    @projects = Project.last(4)
     @references = Reference.all
     @reference = Reference.new
   end

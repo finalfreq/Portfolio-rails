@@ -1,7 +1,7 @@
-<%= content_for(:title, "Categories | Freqy" ) %>
+<%= content_for(:title, "Categories | JW" ) %>
 
 
-<h1 class="page-header text-center">My Languages and Skills</h1>
+<h1 class="page-header text-center">Current Skillsets</h1>
 <% if can? :create, Category %>
 <%= link_to "Add Category", new_category_path, remote: true, class: "btn btn-success btn-block", id: 'add-category' %>
 <% end %>

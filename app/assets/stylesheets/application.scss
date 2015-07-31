@@ -1,3 +1,4 @@
+@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootswatch/slate/variables";
 @import "bootstrap";
@@ -69,5 +70,17 @@ a {
     background: #1c1e22;
     color: #01edd4;
   }
+}
 
+.navbar-default .navbar-nav > li > a {
+  font-size: 1.4em;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  transition: background-color .5s ease;
+  background: rgb(57, 49, 55);
+}
+
+#last {
+  padding-right: 25px;
 }

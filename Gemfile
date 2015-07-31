@@ -14,6 +14,8 @@ gem 'pry'
 gem 'bcrypt'
 gem 'devise'
 gem 'jquery-turbolinks'
+gem "font-awesome-rails"
+
 
 group :development do
   gem 'byebug'
