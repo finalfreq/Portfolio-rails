@@ -3,6 +3,7 @@
 
 <%= bootstrap_form_for [@category, @project], remote: true do |f| %>
   <%= f.text_field :name, required: true %>
+  <%= f.text_field :image, required: true %>
   <%= f.text_field :link, label: 'GitHub Link', required: true %>
   <%= f.text_area :description, required: true %>
   <%= f.submit data: {disable_with: "Saving...." }, class: "btn btn-success btn-block" %>
